@@ -1,0 +1,8 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import "../styles/global.css";
+const base = import.meta.env.BASE_URL;
+---
+<MainLayout title="Page introuvable — CAPE3D" description="Cette page n'existe pas ou a été déplacée.">
+  <div class="noise" aria-hidden="true"></div><main class="legal-page section-pad"><p class="eyebrow">ERREUR 404</p><h1>Cette page<br /><em>n'existe pas.</em></h1><p>Le lien utilisé est peut-être incorrect ou la page a été déplacée.</p><a class="button button-primary legal-back" href={base}>Revenir à l'accueil <span>↗</span></a></main>
+</MainLayout>

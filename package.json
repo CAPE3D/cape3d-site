@@ -1,0 +1,8 @@
+{
+  "name": "cape3d-site",
+  "type": "module",
+  "version": "2.0.0",
+  "private": true,
+  "scripts": {"dev": "astro dev", "build": "astro build", "preview": "astro preview"},
+  "dependencies": {"astro": "^5.7.0", "gsap": "^3.13.0", "three": "^0.175.0"}
+}

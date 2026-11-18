@@ -1,0 +1,19 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import "../styles/global.css";
+const base = import.meta.env.BASE_URL;
+---
+<MainLayout title="Mentions légales — CAPE3D" description="Mentions légales du site CAPE3D.">
+  <div class="noise" aria-hidden="true"></div>
+  <header class="site-header legal-header"><a class="brand" href={base} aria-label="CAPE3D, accueil"><img class="brand-logo" src={`${base}images/logo-cape3d.png`} alt="CAPE3D" /></a><a class="header-cta" href={base}>Retour au site <span>↗</span></a></header>
+  <main class="legal-page section-pad">
+    <p class="eyebrow">INFORMATIONS LÉGALES</p><h1>Mentions <em>légales.</em></h1>
+    <p class="legal-warning">Cette page est une trame à compléter avant la mise en ligne publique. Les informations juridiques de l'entreprise et de l'hébergeur doivent être vérifiées et renseignées.</p>
+    <h2>Éditeur du site</h2><p><strong>Nom commercial :</strong> CAPE3D<br /><strong>Raison sociale :</strong> À compléter<br /><strong>Forme juridique :</strong> À compléter<br /><strong>Adresse du siège :</strong> À compléter<br /><strong>Numéro SIREN / SIRET :</strong> À compléter<br /><strong>Directeur de la publication :</strong> À compléter<br /><strong>Contact :</strong> <a href="mailto:contact@cape-3d.fr">contact@cape-3d.fr</a></p>
+    <h2>Hébergement</h2><p><strong>Hébergeur du site :</strong> GitHub Pages (GitHub, Inc.)<br /><strong>Adresse :</strong> 88 Colin P Kelly Jr St, San Francisco, CA 94107, États-Unis<br /><strong>Site :</strong> <a href="https://pages.github.com/" target="_blank" rel="noreferrer">pages.github.com</a></p>
+    <h2>Propriété intellectuelle</h2><p>Les textes, éléments graphiques, logo, visuels et éléments de conception présents sur ce site sont protégés par les dispositions applicables en matière de propriété intellectuelle. Toute reproduction ou réutilisation non autorisée est interdite.</p>
+    <h2>Données personnelles</h2><p>Le site vitrine ne comporte actuellement aucun formulaire de collecte ni outil de suivi publicitaire. Les échanges initiés par email sont traités afin de répondre aux demandes adressées à CAPE3D. Cette section devra être complétée si de nouveaux outils de mesure d'audience ou de collecte sont ajoutés.</p>
+    <a class="button button-primary legal-back" href={base}>Retour à l'accueil <span>↗</span></a>
+  </main>
+  <footer class="site-footer"><a class="brand footer-brand" href={base}><img class="brand-logo" src={`${base}images/logo-cape3d.png`} alt="CAPE3D" /></a><span>© {new Date().getFullYear()} CAPE3D</span><a href="mailto:contact@cape-3d.fr">contact@cape-3d.fr</a></footer>
+</MainLayout>

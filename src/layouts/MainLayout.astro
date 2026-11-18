@@ -1,0 +1,31 @@
+---
+const { title = "CAPE3D — La précision prend forme", description = "Impression 3D FDM et SLA, gravure laser de précision. Prototypes, pièces techniques et petites séries pour les professionnels, de Lyon à Genève." } = Astro.props;
+const base = import.meta.env.BASE_URL;
+const canonical = new URL(`${base}${Astro.url.pathname.replace(/^\//, "")}`, Astro.site ?? "https://cape3d.github.io").toString();
+---
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#101214" />
+    <meta name="description" content={description} />
+    <meta name="robots" content="index,follow,max-image-preview:large" />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:site_name" content="CAPE3D" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={`${Astro.site ?? "https://cape3d.github.io"}${base}images/hero-precision-rotor.webp`} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="image" href={`${base}images/hero-precision-rotor.webp`} fetchpriority="high" />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <title>{title}</title>
+  </head>
+  <body><slot /></body>
+</html>
