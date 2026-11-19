@@ -1,29 +1,25 @@
-# CAPE3D — Landing page V1
+# CAPE3D — Site vitrine
 
-Landing page française, premium et responsive pour CAPE3D. Stack : Astro 5, Three.js et GSAP. Préparée pour un déploiement statique sur GitHub Pages avec le domaine `cape-3d.fr`.
+Site vitrine français pour CAPE3D. Stack : Astro 5, Three.js et GSAP. Déploiement statique GitHub Pages sur le domaine personnalisé `cape-3d.fr`.
 
-## Ce qui est inclus
+## Direction et contenu
 
-- Direction artistique dark / industriel, logo CAPE3D fourni.
-- Hero avec rendu 3D photoréaliste et objet Three.js interactif (rotation subtile au pointeur), avec fallback visuel si WebGL est indisponible.
-- Visuels photoréalistes dédiés aux expertises FDM, SLA et gravure laser.
-- Sections approche, expertises, méthode, présentation CAPE3D, FAQ et contact.
-- Navigation mobile, barre de progression, animations au scroll et prise en charge de `prefers-reduced-motion`.
-- Responsive desktop, tablette et mobile.
+- Direction artistique éditoriale : ivoire minéral, graphite, détails cuivre discrets.
+- Hero photographique avec rendu du composant mécanique et scène Three.js interactive en surimpression légère.
+- Visuels existants réutilisés pour les expertises FDM, SLA et gravure laser.
+- Sections approche, expertises, méthode, atelier, FAQ et demande de devis.
+- Navigation mobile, progression de lecture, animations au scroll et prise en charge de `prefers-reduced-motion`.
+- Formulaire de brief qui prépare un email dans la messagerie du visiteur. Les fichiers choisis sont listés dans l'email mais doivent être ajoutés manuellement en pièces jointes : GitHub Pages ne traite pas lui-même les uploads ni l'envoi de formulaire.
 - SEO de base : titres, description, canonical, Open Graph, favicon, robots.txt et sitemap.xml.
-- Page de mentions légales en trame, à compléter avec les informations exactes de l'entreprise avant publication.
-- Workflow GitHub Actions pour déploiement GitHub Pages.
-
-## Ce qui est volontairement reporté
-
-Le formulaire de devis, l'envoi d'emails et le dépôt de fichiers ne sont pas développés dans cette V1. La page Contact renvoie vers `mailto:contact@cape-3d.fr`. Aucun formulaire factice ne prétend transmettre des informations. Le VPS KVM 2 n'est pas nécessaire pour héberger cette première version statique.
+- Page de mentions légales en trame, à compléter avant publication.
+- Workflow GitHub Actions pour construire et déployer le dossier `dist`.
 
 ## Prérequis
 
 - Node.js 22 LTS
-- Git
-- Compte GitHub
-- Accès au DNS du domaine chez Hostinger
+- npm
+- Compte GitHub avec GitHub Pages activé
+- Accès DNS au domaine chez Hostinger
 
 ## Tester en local
 
@@ -41,23 +37,23 @@ npm run preview
 
 ## Publier sur GitHub Pages
 
-1. Créer un dépôt GitHub (par exemple `cape3d-site`).
-2. Décompresser le projet et envoyer le contenu du dossier `cape3d-site` à la racine du dépôt, sur la branche `main`.
-3. Dans **Settings → Pages**, choisir **GitHub Actions** comme source de déploiement.
-4. Le workflow `.github/workflows/deploy.yml` construit le site puis publie le dossier `dist`.
-5. Dans **Settings → Pages → Custom domain**, saisir `cape-3d.fr`.
-6. Chez Hostinger, configurer les DNS Web indiqués par GitHub Pages pour le domaine racine et `www`.
-7. Attendre la validation DNS puis activer **Enforce HTTPS** dans GitHub Pages.
+1. Décompresser le projet et envoyer le contenu du dossier `CAPE3D` à la racine du dépôt GitHub, sur la branche `main`.
+2. Dans **Settings → Pages**, choisir **GitHub Actions** comme source de déploiement.
+3. Le workflow `.github/workflows/deploy.yml` installe les dépendances, construit le site puis publie le dossier `dist`.
+4. Le fichier `public/CNAME` déclare le domaine `cape-3d.fr`.
+5. Dans **Settings → Pages → Custom domain**, vérifier que `cape-3d.fr` est bien renseigné.
+6. Chez Hostinger, vérifier les enregistrements DNS demandés par GitHub Pages pour le domaine racine et `www`.
+7. Après propagation DNS et validation, activer **Enforce HTTPS** dans GitHub Pages.
 
-Pour cette prévisualisation GitHub Pages, aucun fichier `CNAME` n'est présent. La configuration utilise temporairement `base: '/cape3d-site'`. Les adresses IP GitHub Pages peuvent évoluer : reprendre les valeurs affichées dans la documentation GitHub au moment de la configuration.
+Le site est configuré pour la racine du domaine personnalisé (`base: '/'`). Si tu souhaites revenir à l'adresse de prévisualisation `cape3d.github.io/cape3d-site/`, il faudra rétablir une configuration `base` dédiée et retirer le CNAME.
 
 ### Important — préserver les emails Hostinger
 
-Le site web et les emails utilisent des enregistrements DNS distincts. Lors de la configuration de GitHub Pages, ne supprimez ni ne remplacez les enregistrements MX, SPF, DKIM ou DMARC déjà configurés pour `contact@cape-3d.fr`. Ne modifiez que les enregistrements A/AAAA/CNAME nécessaires au site, après avoir vérifié la configuration existante.
+Le site web et les emails utilisent des enregistrements DNS distincts. Lors de la configuration de GitHub Pages, ne supprime ni ne remplace les enregistrements MX, SPF, DKIM ou DMARC déjà configurés pour `contact@cape-3d.fr`. Ne modifie que les enregistrements web nécessaires, après vérification de la configuration existante.
 
 ## Arborescence
 
-- `src/pages/index.astro` : landing page.
+- `src/pages/index.astro` : landing page et formulaire de brief.
 - `src/pages/mentions-legales.astro` : trame des mentions légales.
 - `src/pages/404.astro` : page d'erreur.
 - `src/layouts/MainLayout.astro` : métadonnées et structure HTML.
@@ -70,15 +66,15 @@ Le site web et les emails utilisent des enregistrements DNS distincts. Lors de l
 - `public/CNAME` : domaine personnalisé.
 - `.github/workflows/deploy.yml` : déploiement automatique.
 
-## Informations à valider avant lancement public
+## À valider avant lancement public
 
-- Compléter les champs de la page Mentions légales : raison sociale, forme juridique, adresse, SIREN/SIRET et directeur de publication.
+- Compléter les mentions légales : raison sociale, forme juridique, adresse, SIREN/SIRET et directeur de publication.
 - Vérifier les capacités exactes, matériaux, finitions et délais affichés.
 - Confirmer le libellé « région Lyon–Genève » et l'adresse de contact.
-- Ajouter une politique de confidentialité si un formulaire, des statistiques ou d'autres outils de collecte sont ajoutés.
-- Remplacer les rendus 3D de présentation par des images de pièces réelles lorsque disponibles, si souhaité.
+- Pour un véritable dépôt de fichiers et un envoi automatique, connecter un service de formulaire (par exemple Formspree ou une API dédiée) et mettre à jour la politique de confidentialité.
+- Remplacer les rendus de présentation par des photographies de pièces réellement produites lorsque tu en auras.
 
-## Documentation utile
+## Documentation
 
 - GitHub Pages : https://docs.github.com/pages
 - Domaine personnalisé : https://docs.github.com/pages/configuring-a-custom-domain-for-your-github-pages-site

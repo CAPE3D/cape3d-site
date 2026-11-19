@@ -3,93 +3,91 @@ import MainLayout from "../layouts/MainLayout.astro";
 import "../styles/global.css";
 const base = import.meta.env.BASE_URL;
 ---
-<MainLayout>
+<MainLayout title="CAPE3D — Impression 3D & gravure laser de précision" description="CAPE3D accompagne les professionnels de Lyon à Genève en impression 3D FDM, SLA et gravure laser de précision. Prototypes, pièces techniques et petites séries.">
   <div class="noise" aria-hidden="true"></div>
   <div class="scroll-progress" aria-hidden="true"><span></span></div>
   <header class="site-header">
     <a class="brand" href="#top" aria-label="CAPE3D, accueil"><img class="brand-logo" src={`${base}images/logo-cape3d.png`} alt="CAPE3D" /></a>
     <nav class="desktop-nav" aria-label="Navigation principale">
-      <a href="#expertises">Expertises</a><a href="#methode">Notre méthode</a><a href="#atelier">CAPE3D</a>
+      <a href="#expertises">Expertises</a><a href="#methode">Méthode</a><a href="#atelier">L'atelier</a>
     </nav>
-    <a class="header-cta" href="#contact">Parler d'un projet <span>↗</span></a>
+    <a class="header-cta" href="#contact">Décrire un projet <span>↗</span></a>
     <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-nav"><span></span><span></span></button>
     <nav class="mobile-nav" id="mobile-nav" aria-label="Navigation mobile">
-      <a href="#expertises">Expertises <span>01</span></a><a href="#methode">Notre méthode <span>02</span></a><a href="#atelier">CAPE3D <span>03</span></a><a href="#contact">Parler d'un projet <span>↗</span></a>
+      <a href="#expertises">Expertises <span>01</span></a><a href="#methode">Méthode <span>02</span></a><a href="#atelier">L'atelier <span>03</span></a><a href="#contact">Décrire un projet <span>↗</span></a>
     </nav>
   </header>
 
   <main id="top">
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-grid" aria-hidden="true"></div>
-      <div class="hero-glow" aria-hidden="true"></div>
       <div class="hero-copy">
-        <p class="eyebrow"><span class="status-dot"></span> FABRICATION DE PRÉCISION · LYON — GENÈVE</p>
-        <h1 id="hero-title">L'idée prend<br /><em>forme.</em></h1>
-        <p class="hero-intro">De la conception à la pièce finie. CAPE3D transforme vos exigences techniques et vos intentions créatives en réalisations concrètes.</p>
-        <div class="hero-actions"><a class="button button-primary" href="#contact">Présenter un projet <span>↗</span></a><a class="text-link" href="#expertises">Explorer nos expertises <span>↓</span></a></div>
-        <div class="hero-proof"><span><b>FDM</b> Impression fonctionnelle</span><i></i><span><b>SLA</b> Haute définition</span><i></i><span><b>LASER</b> Marquage de précision</span></div>
+        <p class="eyebrow"><span class="status-dot"></span> ATELIER DE FABRICATION · LYON — GENÈVE</p>
+        <h1 id="hero-title">Du concept<br />à la <em>matière.</em></h1>
+        <p class="hero-intro">Impression 3D et gravure laser de précision. Nous transformons vos fichiers, vos contraintes et vos idées en pièces concrètes — avec le regard d'un atelier et l'exigence d'un partenaire technique.</p>
+        <div class="hero-actions"><a class="button button-primary" href="#contact">Parler de votre projet <span>↗</span></a><a class="text-link" href="#expertises">Découvrir les procédés <span>↓</span></a></div>
+        <div class="hero-proof"><span><b>FDM</b> Pièces fonctionnelles</span><i></i><span><b>SLA</b> Détail & finesse</span><i></i><span><b>LASER</b> Marquage précis</span></div>
       </div>
-      <div class="hero-stage" aria-label="Rendu 3D d'un composant mécanique de précision, interactif">
-        <div class="stage-frame"><img class="hero-poster" src={`${base}images/hero-precision-rotor.webp`} alt="Composant mécanique de précision en métal sombre et détails cuivrés, rendu 3D" fetchpriority="high" /><canvas id="hero-canvas" aria-hidden="true"></canvas></div>
-        <div class="stage-label stage-label-top"><span>FIG. 001</span><span>FORM / FUNCTION</span></div>
-        <div class="stage-label stage-label-bottom"><span>PRECISION IN MOTION</span><span class="drag-hint">MOVE TO EXPLORE&nbsp; ↗</span></div>
-        <div class="stage-crosshair" aria-hidden="true">+</div>
-        <div class="stage-orbit orbit-a" aria-hidden="true"></div><div class="stage-orbit orbit-b" aria-hidden="true"></div>
+      <div class="hero-stage" aria-label="Composant mécanique de précision">
+        <div class="stage-kicker"><span>ÉTUDE / 001</span><span>FORM FOLLOWS FUNCTION</span></div>
+        <div class="stage-frame"><img class="hero-poster" src={`${base}images/hero-precision-rotor.webp`} alt="Composant mécanique de précision en métal sombre et détails cuivrés" fetchpriority="high" /><canvas id="hero-canvas" aria-hidden="true"></canvas><div class="stage-vignette"></div></div>
+        <div class="stage-meta"><span>PIÈCE TECHNIQUE · RENDU D'ILLUSTRATION</span><span class="drag-hint">EXPLORER ↗</span></div>
+        <div class="stage-index">C3D<span> / 01</span></div>
       </div>
-      <div class="hero-foot"><span>PROTOTYPES · PETITES SÉRIES · GRAVURE</span><a href="#expertises">SCROLL TO DISCOVER <span>↓</span></a><span>01 / 04</span></div>
+      <div class="hero-foot"><span>CONCEVOIR · FABRIQUER · GRAVER</span><a href="#approche">DÉFILER POUR EXPLORER <span>↓</span></a><span>01 — 05</span></div>
     </section>
 
-    <section class="manifesto section-pad">
-      <div class="section-index">[ 01 — APPROCHE ]</div>
-      <div class="manifesto-content reveal">
+    <section class="intro-section section-pad" id="approche">
+      <div class="section-kicker"><span>01</span><span>NOTRE APPROCHE</span></div>
+      <div class="intro-main reveal">
         <p class="eyebrow">TECHNIQUE, MATIÈRE & CRÉATION</p>
-        <h2>La précision industrielle.<br /><span>La liberté de création.</span></h2>
-        <div class="manifesto-bottom"><p>Un besoin technique, une intention de design, un fichier CAO ou une idée à concrétiser : CAPE3D associe maîtrise des procédés, sens du détail et accompagnement technique pour donner vie aux projets qui comptent.</p><span class="manifesto-stamp">BUILT<br />WITH<br /><b>INTENT.</b></span></div>
+        <h2>La précision<br /><span>sans renoncer à l'idée.</span></h2>
+        <div class="intro-bottom"><p>Une pièce à concevoir, un prototype à valider, une série courte à lancer ou un objet à signer : CAPE3D réunit fabrication additive, gravure laser et accompagnement technique pour faire aboutir les projets qui méritent de l'attention.</p><div class="intro-mark"><span>BUILT</span><span>WITH</span><b>INTENT.</b></div></div>
       </div>
     </section>
 
     <section class="expertise-section section-pad" id="expertises">
-      <div class="section-heading reveal"><div><p class="eyebrow">[ 02 — NOS EXPERTISES ]</p><h2>Trois procédés.<br /><span>Un même niveau d'exigence.</span></h2></div><p class="heading-note">Du prototype fonctionnel à la pièce de présentation, nous orientons chaque projet vers le procédé adapté à son usage, sa matière et son niveau de détail.</p></div>
+      <div class="section-heading reveal"><div><p class="eyebrow">02 / NOS EXPERTISES</p><h2>Trois procédés.<br /><span>Une seule exigence.</span></h2></div><p class="heading-note">Le procédé n'est jamais une fin en soi. Nous choisissons la bonne technologie en fonction de l'usage, de la matière, du niveau de détail et du résultat attendu.</p></div>
 
       <article class="expertise-card reveal" id="fdm">
-        <div class="expertise-visual"><img src={`${base}images/expertise-fdm.webp`} alt="Pièce technique imprimée en FDM, finition noire mate et inserts métalliques" loading="lazy" /><span class="visual-number">01 / ADDITIVE</span><span class="visual-caption">LAYER BY LAYER</span><span class="visual-index">FDM</span></div>
-        <div class="expertise-info"><p class="eyebrow">FDM / FUSED DEPOSITION MODELING</p><h3>La fonction<br />avant tout.</h3><p>Des pièces robustes et utiles, pensées pour tester, assembler, valider et produire. Le FDM permet de matérialiser rapidement des géométries fonctionnelles et des solutions adaptées aux contraintes de terrain.</p><ul class="capability-list"><li>Prototypes fonctionnels</li><li>Outillages & gabarits</li><li>Petites séries</li><li>Choix de matériaux selon usage</li></ul><div class="spec-line"><span>VOLUME MAXIMAL</span><strong>200 × 200 × 200 mm</strong></div></div>
+        <div class="expertise-visual"><img src={`${base}images/expertise-fdm.webp`} alt="Pièce technique imprimée en FDM, structure noire et détails fonctionnels" loading="lazy" /><span class="visual-number">01 / ADDITIVE</span><span class="visual-caption">LAYER BY LAYER</span><span class="visual-index">FDM</span></div>
+        <div class="expertise-info"><p class="eyebrow">FDM / DÉPÔT DE FILAMENT</p><h3>La fonction<br />avant tout.</h3><p>Des pièces robustes et utiles, pensées pour tester, assembler, valider et produire. Le FDM permet de matérialiser rapidement des géométries fonctionnelles et des solutions adaptées aux contraintes du terrain.</p><ul class="capability-list"><li>Prototypes fonctionnels</li><li>Outillages & gabarits</li><li>Petites séries</li><li>Matériaux selon usage</li></ul><div class="spec-line"><span>VOLUME MAXIMAL</span><strong>200 × 200 × 200 mm</strong></div></div>
       </article>
 
       <article class="expertise-card expertise-reverse reveal" id="sla">
-        <div class="expertise-visual"><img src={`${base}images/expertise-sla.webp`} alt="Turbine complexe en résine translucide réalisée en impression SLA" loading="lazy" /><span class="visual-number">02 / HIGH DEFINITION</span><span class="visual-caption">DETAIL IS EVERYTHING</span><span class="visual-index">SLA</span></div>
-        <div class="expertise-info"><p class="eyebrow">SLA / STÉRÉOLITHOGRAPHIE</p><h3>Le détail<br />sans compromis.</h3><p>Quand la finesse, la précision géométrique et la qualité de surface deviennent essentielles. La technologie résine ouvre la voie aux formes complexes, aux détails fins et aux pièces de présentation exigeantes.</p><ul class="capability-list"><li>Géométries complexes</li><li>Détails fins & surfaces précises</li><li>Prototypes de présentation</li><li>Résines adaptées à l'application</li></ul><div class="spec-line"><span>FORMAT DE RÉFÉRENCE</span><strong>GK3 Ultra</strong></div></div>
+        <div class="expertise-visual"><img src={`${base}images/expertise-sla.webp`} alt="Turbine complexe et translucide réalisée en impression résine SLA" loading="lazy" /><span class="visual-number">02 / HIGH DEFINITION</span><span class="visual-caption">DETAIL IS EVERYTHING</span><span class="visual-index">SLA</span></div>
+        <div class="expertise-info"><p class="eyebrow">SLA / STÉRÉOLITHOGRAPHIE</p><h3>Le détail<br />à l'échelle fine.</h3><p>Quand la finesse, la précision géométrique et la qualité de surface deviennent essentielles. La technologie résine ouvre la voie aux formes complexes et aux pièces de présentation exigeantes.</p><ul class="capability-list"><li>Géométries complexes</li><li>Détails fins & surfaces précises</li><li>Prototypes de présentation</li><li>Résines adaptées au projet</li></ul><div class="spec-line"><span>FORMAT DE RÉFÉRENCE</span><strong>GK3 Ultra</strong></div></div>
       </article>
 
       <article class="expertise-card reveal" id="laser">
-        <div class="expertise-visual"><img src={`${base}images/expertise-laser.webp`} alt="Plaque en acier inoxydable brossé gravée au laser avec un motif détaillé" loading="lazy" /><span class="visual-number">03 / MARKING</span><span class="visual-caption">LIGHT MEETS MATERIAL</span><span class="visual-index">LASER</span></div>
-        <div class="expertise-info"><p class="eyebrow">LASER / FINE MARKING</p><h3>La matière<br />a sa signature.</h3><p>Gravure et marquage de précision pour identifier, personnaliser et sublimer vos pièces. Une approche technique qui laisse aussi toute sa place à l'expression graphique et au design.</p><ul class="capability-list"><li>Gravure de précision</li><li>Marquage sur supports compatibles</li><li>Personnalisation & identité visuelle</li><li>Gravure multicolore selon matériau</li></ul><div class="spec-line"><span>ÉQUIPEMENT</span><strong>xTool F2 Ultra · Double laser</strong></div></div>
+        <div class="expertise-visual"><img src={`${base}images/expertise-laser.webp`} alt="Plaque en acier inoxydable brossé gravée au laser" loading="lazy" /><span class="visual-number">03 / MARKING</span><span class="visual-caption">LIGHT MEETS MATERIAL</span><span class="visual-index">LASER</span></div>
+        <div class="expertise-info"><p class="eyebrow">LASER / MARQUAGE DE PRÉCISION</p><h3>La matière<br />a sa signature.</h3><p>Gravure et marquage pour identifier, personnaliser et valoriser vos pièces. Une approche technique qui laisse aussi toute sa place à l'expression graphique et au design.</p><ul class="capability-list"><li>Gravure de précision</li><li>Marquage sur supports compatibles</li><li>Personnalisation & identité</li><li>Gravure multicolore selon matériau</li></ul><div class="spec-line"><span>ÉQUIPEMENT</span><strong>xTool F2 Ultra · Double laser</strong></div></div>
       </article>
     </section>
 
-    <section class="statement-band"><div class="statement-inner reveal"><p class="eyebrow">FROM DIGITAL DESIGN TO PHYSICAL PRECISION</p><p class="statement">Une idée exigeante<br />mérite une <em>réalisation juste.</em></p><span class="statement-rule"></span></div></section>
+    <section class="statement-band"><div class="statement-inner reveal"><p class="eyebrow">FROM DIGITAL DESIGN TO PHYSICAL PRECISION</p><p class="statement">Les idées prennent forme.<br /><em>Les détails font la différence.</em></p><div class="statement-bottom"><span>DESIGN / ENGINEERING / MAKING</span><span>FABRICATION FRANÇAISE</span></div></div></section>
 
     <section class="process-section section-pad" id="methode">
-      <div class="section-heading reveal"><div><p class="eyebrow">[ 03 — NOTRE MÉTHODE ]</p><h2>Du premier échange<br /><span>à la pièce finie.</span></h2></div><p class="heading-note">Un accompagnement direct, réactif et confidentiel à chaque étape. Le bon procédé, le bon niveau de finition et une fabrication adaptée à votre besoin.</p></div>
+      <div class="section-heading reveal"><div><p class="eyebrow">03 / NOTRE MÉTHODE</p><h2>Du premier échange<br /><span>à la pièce finie.</span></h2></div><p class="heading-note">Un interlocuteur direct, une étude attentive et un suivi clair. Chaque étape est pensée pour faire avancer le projet sans perdre de vue son usage final.</p></div>
       <div class="process-grid">
         <article class="process-step reveal"><span class="step-no">01</span><div class="step-icon">↗</div><h3>Échanger</h3><p>Comprendre l'usage, les contraintes, les quantités et le niveau de finition attendu.</p></article>
         <article class="process-step reveal"><span class="step-no">02</span><div class="step-icon">⌘</div><h3>Étudier</h3><p>Analyser les fichiers, conseiller le procédé et définir la meilleure approche.</p></article>
         <article class="process-step reveal"><span class="step-no">03</span><div class="step-icon">✳</div><h3>Fabriquer</h3><p>Réaliser vos prototypes ou petites séries avec exigence et précision.</p></article>
         <article class="process-step reveal"><span class="step-no">04</span><div class="step-icon">✓</div><h3>Finaliser</h3><p>Contrôler, préparer et livrer une pièce prête à répondre à son usage.</p></article>
       </div>
-      <div class="process-note reveal"><span class="note-mark">↗</span><p><strong>Un projet urgent ?</strong> Les délais peuvent être de quelques jours selon la complexité, le procédé et la quantité.</p></div>
+      <div class="process-note reveal"><span class="note-mark">↗</span><p><strong>Un projet urgent ?</strong> Certains délais peuvent être de quelques jours selon la complexité, le procédé et la quantité.</p></div>
     </section>
 
     <section class="atelier-section section-pad" id="atelier">
-      <div class="atelier-visual reveal"><div class="atelier-grid"></div><div class="atelier-frame"><div class="atelier-rings"></div><div class="atelier-core">C<span>3</span>D</div><span class="atelier-orbit-label">DESIGN · ENGINEERING · MAKING</span></div><span class="atelier-coordinate">LYON ↔ GENÈVE<br />FRANCE</span></div>
-      <div class="atelier-copy reveal"><p class="eyebrow">[ 04 — CAPE3D ]</p><h2>Un atelier.<br /><span>Un interlocuteur.<br />Une exigence.</span></h2><p>Implanté dans la région Lyon–Genève, CAPE3D accompagne les professionnels, bureaux d'études, architectes et artisans dans la concrétisation de projets techniques et créatifs.</p><div class="atelier-points"><span><b>01</b> Fabrication française</span><span><b>02</b> Devis réactif</span><span><b>03</b> Confidentialité & NDA</span><span><b>04</b> Accompagnement technique</span><span><b>05</b> Design, peinture & finitions</span><span><b>06</b> Prototypes & petites séries</span></div></div>
+      <div class="atelier-visual reveal"><div class="atelier-grid"></div><div class="atelier-frame"><div class="atelier-rings"></div><div class="atelier-core">C<span>3</span>D</div><span class="atelier-orbit-label">DESIGN · ENGINEERING · MAKING</span></div><span class="atelier-coordinate">LYON ↔ GENÈVE<br />FRANCE</span><span class="atelier-figure">FIG. 003 — ATELIER</span></div>
+      <div class="atelier-copy reveal"><p class="eyebrow">04 / CAPE3D</p><h2>Un atelier.<br /><span>Un interlocuteur.<br />Une exigence.</span></h2><p>Implanté dans la région Lyon–Genève, CAPE3D accompagne les professionnels, bureaux d'études, architectes et artisans dans la concrétisation de projets techniques et créatifs.</p><div class="atelier-points"><span><b>01</b> Fabrication française</span><span><b>02</b> Devis réactif</span><span><b>03</b> Confidentialité & NDA</span><span><b>04</b> Accompagnement technique</span><span><b>05</b> Design, peinture & finitions</span><span><b>06</b> Prototypes & petites séries</span></div></div>
     </section>
 
     <section class="faq-section section-pad">
-      <div class="section-heading reveal"><div><p class="eyebrow">[ 05 — QUESTIONS FRÉQUENTES ]</p><h2>Les bonnes réponses<br /><span>avant de commencer.</span></h2></div><p class="heading-note">Chaque projet est différent. Voici quelques repères pour préparer notre premier échange.</p></div>
+      <div class="section-heading reveal"><div><p class="eyebrow">05 / QUESTIONS FRÉQUENTES</p><h2>Avant de lancer<br /><span>la fabrication.</span></h2></div><p class="heading-note">Quelques repères pour préparer notre premier échange. Chaque projet reste étudié selon ses propres contraintes.</p></div>
       <div class="faq-list reveal">
-        <details><summary>Quels types de projets prenez-vous en charge ? <span>+</span></summary><p>Nous privilégions les demandes professionnelles et les projets conséquents : prototypes fonctionnels, pièces techniques, outillages, petites séries, objets de présentation et gravure de précision. Notre positionnement vise les réalisations à véritable enjeu, plutôt que les demandes de figurines décoratives isolées.</p></details>
-        <details><summary>Dois-je fournir un fichier 3D ? <span>+</span></summary><p>Un fichier CAO ou un modèle 3D facilite l'étude, mais il n'est pas indispensable pour un premier échange. Nous pouvons discuter de votre besoin et de la faisabilité à partir de plans, de dimensions ou d'un cahier des charges.</p></details>
+        <details><summary>Quels types de projets prenez-vous en charge ? <span>+</span></summary><p>Nous privilégions les demandes professionnelles et les projets conséquents : prototypes fonctionnels, pièces techniques, outillages, petites séries, objets de présentation et gravure de précision. Notre positionnement vise les réalisations à véritable enjeu plutôt que les demandes de figurines décoratives isolées.</p></details>
+        <details><summary>Dois-je fournir un fichier 3D ? <span>+</span></summary><p>Un fichier CAO ou un modèle 3D facilite l'étude, mais n'est pas indispensable pour un premier échange. Nous pouvons discuter du besoin à partir de plans, de dimensions ou d'un cahier des charges.</p></details>
         <details><summary>Quels sont les délais de fabrication ? <span>+</span></summary><p>Selon la technologie, la complexité et la quantité, certaines demandes peuvent être réalisées en quelques jours. Le délai est confirmé après étude du projet.</p></details>
         <details><summary>Les projets peuvent-ils être confidentiels ? <span>+</span></summary><p>La confidentialité fait partie de notre approche. Un accord de non-divulgation (NDA) peut être convenu avant la transmission d'informations sensibles.</p></details>
         <details><summary>Travaillez-vous uniquement avec des entreprises ? <span>+</span></summary><p>CAPE3D s'adresse en priorité aux bureaux d'études, industriels, artisans, architectes et professionnels ayant un besoin technique ou créatif structuré.</p></details>
@@ -97,8 +95,21 @@ const base = import.meta.env.BASE_URL;
     </section>
 
     <section class="contact-section section-pad" id="contact">
-      <div class="contact-intro reveal"><p class="eyebrow">[ 06 — PARLONS DE VOTRE PROJET ]</p><h2>Faisons prendre<br /><em>forme</em> à vos idées.</h2><p>Vous avez un besoin précis, une pièce à produire ou une idée à explorer ? Présentez-nous votre projet. Nous étudierons ensemble la meilleure manière de le concrétiser.</p><a class="button button-primary contact-button" href="mailto:contact@cape-3d.fr?subject=Projet%20CAPE3D">Écrire à CAPE3D <span>↗</span></a><div class="contact-direct"><span>CONTACT DIRECT</span><a href="mailto:contact@cape-3d.fr">contact@cape-3d.fr</a></div></div>
-      <div class="contact-aside reveal"><div class="contact-aside-top"><span>LET'S MAKE IT REAL</span><span>FR / 01</span></div><div class="contact-graphic"><div class="contact-ring ring-one"></div><div class="contact-ring ring-two"></div><div class="contact-cross">+</div><div class="contact-graphic-word">CAPE<span>3D</span></div></div><div class="contact-aside-bottom"><p>FDM / SLA / LASER</p><p>PROTOTYPES & PETITES SÉRIES</p></div><p class="contact-aside-note">Le formulaire de demande de devis et le dépôt de fichiers seront intégrés dans une prochaine étape. Pour le moment, contactez-nous directement par email.</p></div>
+      <div class="contact-intro reveal"><p class="eyebrow">06 / PARLONS DE VOTRE PROJET</p><h2>Faisons prendre<br /><em>forme</em> à vos idées.</h2><p>Un besoin précis, une pièce à produire ou une idée à explorer ? Donnez-nous les premières informations. Nous reviendrons vers vous pour étudier la meilleure approche.</p><div class="contact-direct"><span>CONTACT DIRECT</span><a href="mailto:contact@cape-3d.fr">contact@cape-3d.fr ↗</a></div><div class="contact-location"><span>ZONE D'INTERVENTION</span><strong>Lyon — Genève · France</strong></div></div>
+      <div class="contact-form-wrap reveal">
+        <div class="form-heading"><span>BRIEF PROJET / 01</span><span>ÉTUDE PERSONNALISÉE</span></div>
+        <form id="quote-form" class="quote-form">
+          <div class="form-row"><label>Votre nom<input name="name" autocomplete="name" required placeholder="Nom et prénom" /></label><label>Votre entreprise<input name="company" autocomplete="organization" placeholder="Société" /></label></div>
+          <div class="form-row"><label>Votre email<input type="email" name="email" autocomplete="email" required placeholder="nom@entreprise.fr" /></label><label>Téléphone<input type="tel" name="phone" autocomplete="tel" placeholder="+33 ..." /></label></div>
+          <label>Nature du projet<select name="project" required><option value="" disabled selected>Choisir une expertise</option><option>Impression 3D FDM</option><option>Impression 3D SLA</option><option>Gravure laser</option><option>Projet combinant plusieurs procédés</option><option>Conseil / étude de faisabilité</option></select></label>
+          <label>Votre besoin<textarea name="message" rows="4" required placeholder="Usage, dimensions, matière, quantité, délai souhaité…"></textarea></label>
+          <label class="file-field">Fichiers du projet <span class="file-hint">CAO, plans, images — 20 Mo maximum par fichier</span><input id="project-files" type="file" name="files" multiple accept=".stl,.step,.stp,.3mf,.obj,.iges,.igs,.pdf,.dxf,.dwg,.png,.jpg,.jpeg,.zip" /><span class="file-button">＋ Ajouter des fichiers</span><span id="file-list" class="file-list">Aucun fichier sélectionné</span></label>
+          <label class="consent"><input type="checkbox" name="consent" required /><span>J'accepte que les informations saisies soient utilisées pour être recontacté au sujet de ma demande.</span></label>
+          <button class="button button-primary form-submit" type="submit">Préparer ma demande <span>↗</span></button>
+          <p class="form-note">* Délai indicatif. Ce formulaire prépare un email dans votre messagerie. Les fichiers sélectionnés devront être ajoutés à l'email avant envoi.</p>
+          <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
     </section>
   </main>
 
@@ -111,4 +122,36 @@ const base = import.meta.env.BASE_URL;
   import { initNavigation } from "../scripts/navigation.js";
   import { initProgress } from "../scripts/progress.js";
   initHero(); initMotion(); initNavigation(); initProgress();
+
+  const fileInput = document.querySelector<HTMLInputElement>("#project-files");
+  const fileList = document.querySelector<HTMLElement>("#file-list");
+  const form = document.querySelector<HTMLFormElement>("#quote-form");
+  const status = document.querySelector<HTMLElement>("#form-status");
+  fileInput?.addEventListener("change", () => {
+    const files = [...(fileInput.files ?? [])];
+    fileList.textContent = files.length ? files.map(file => `${file.name} (${(file.size / 1024 / 1024).toFixed(1)} Mo)`).join(" · ") : "Aucun fichier sélectionné";
+  });
+  form?.addEventListener("submit", event => {
+    event.preventDefault();
+    if (!form.reportValidity()) return;
+    const oversized = [...(fileInput?.files ?? [])].filter(file => file.size > 20 * 1024 * 1024);
+    if (oversized.length) { status.textContent = `Fichier trop volumineux : ${oversized.map(file => file.name).join(", ")}. Chaque fichier doit faire 20 Mo maximum.`; status.style.color = "#a33d2e"; return; }
+    const data = new FormData(form);
+    const body = [
+      `Nom : ${data.get("name")}`,
+      `Entreprise : ${data.get("company") || "Non renseignée"}`,
+      `Email : ${data.get("email")}`,
+      `Téléphone : ${data.get("phone") || "Non renseigné"}`,
+      `Projet : ${data.get("project")}`,
+      "",
+      "Description :",
+      data.get("message"),
+      "",
+      `Fichiers à joindre : ${[...(fileInput?.files ?? [])].map(file => file.name).join(", ") || "Aucun"}`,
+      "Merci d'ajouter les fichiers sélectionnés en pièces jointes avant d'envoyer votre email."
+    ].join("\n");
+    status.style.color = "#47704c";
+    status.textContent = "Votre messagerie va s'ouvrir avec votre demande préremplie. Pensez à joindre les fichiers sélectionnés avant l'envoi.";
+    window.location.href = `mailto:contact@cape-3d.fr?subject=${encodeURIComponent("Demande de devis CAPE3D — " + data.get("project"))}&body=${encodeURIComponent(body)}`;
+  });
 </script>
