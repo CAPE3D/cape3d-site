@@ -15,3 +15,37 @@
 @media(max-width:420px){.hero h1{font-size:66px}.hero-stage{height:310px}.hero-proof{font-size:7px;gap:7px}.expertise-visual{height:290px}.capability-list{grid-template-columns:1fr}.spec-line{font-size:8px}.process-step{min-height:245px}.atelier-points{grid-template-columns:1fr}.contact-intro h2{font-size:56px}.form-row{grid-template-columns:1fr}.form-heading{flex-direction:column;gap:6px}.stage-meta{font-size:7px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
 .legal-header{position:relative}.legal-page{max-width:1000px;margin:0 auto;padding-top:100px;min-height:75vh}.legal-page h1{font-size:clamp(54px,8vw,90px);line-height:1;letter-spacing:-.08em;font-weight:500;margin:24px 0 34px}.legal-page h1 em{font-style:normal;color:#b77549}.legal-page h2{font-size:20px;font-weight:600;margin:42px 0 12px}.legal-page p{color:#626c6d;font-size:14px;line-height:1.9}.legal-page a:not(.button){color:#a9683e}.legal-warning{padding:16px 18px;border:1px solid rgba(169,104,62,.4);background:rgba(169,104,62,.07);color:#76543d!important}.legal-back{margin-top:35px}
+
+/* CAPE3D V5 — immersive scroll-controlled 3D chapter */
+.world-section{height:360vh;position:relative;background:#101416;color:#f4f1e9;isolation:isolate}
+.world-sticky{height:100svh;min-height:620px;position:sticky;top:0;overflow:hidden;background:radial-gradient(ellipse at 63% 46%,#273034 0%,#151b1e 42%,#0d1113 100%)}
+#world-canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.world-grain{position:absolute;inset:0;pointer-events:none;opacity:.12;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E")}
+.world-topline,.world-bottom{position:absolute;left:var(--gutter);right:var(--gutter);display:flex;align-items:center;justify-content:space-between;font:9px var(--mono);letter-spacing:1.5px;color:rgba(232,235,230,.58);z-index:3}
+.world-topline{top:35px;border-bottom:1px solid rgba(255,255,255,.13);padding-bottom:17px}
+.world-topline span:last-child{color:var(--accent-light)}
+.world-chapter{position:absolute;z-index:3;left:var(--gutter);top:50%;transform:translateY(-40%);width:min(420px,38vw);opacity:0;visibility:hidden;transition:opacity .55s ease,transform .65s cubic-bezier(.2,.7,.2,1),visibility .55s}
+.world-chapter.is-active{opacity:1;visibility:visible;transform:translateY(-50%)}
+.world-chapter .eyebrow{color:var(--accent-light);margin-bottom:22px}
+.world-chapter h2{font-size:clamp(56px,7vw,104px);line-height:.88;letter-spacing:-.09em;font-weight:500;margin:0 0 25px}
+.world-chapter h2 em{font-style:normal;color:#d69b70}
+.world-chapter>p:not(.eyebrow){font-size:14px;line-height:1.85;color:#b5bfbd;max-width:350px;margin:0}
+.world-link{display:inline-flex;gap:35px;align-items:center;margin-top:30px;padding:15px 18px;border:1px solid rgba(232,235,230,.4);font-size:11px;color:#f5f2ea;transition:background .25s,border-color .25s}
+.world-link:hover{background:#d18d5d;border-color:#d18d5d;color:#111}
+.world-link span{color:var(--accent-light)}
+.world-bottom{bottom:30px;gap:24px}
+.world-bottom>span:last-child{color:var(--accent-light)}
+.world-progress{height:1px;flex:1;max-width:300px;background:rgba(255,255,255,.2);overflow:hidden}
+.world-progress span{display:block;width:100%;height:100%;background:var(--accent-light);transform:scaleX(0);transform-origin:left}
+.world-side-note{position:absolute;right:var(--gutter);top:50%;writing-mode:vertical-rl;font:8px var(--mono);letter-spacing:2px;color:rgba(230,234,229,.38)}
+.world-fallback #world-canvas{display:none}
+.world-fallback .world-sticky{background:#111719 url('/images/hero-precision-rotor.webp') center/cover no-repeat}
+.world-fallback .world-sticky:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(12,16,18,.94),rgba(12,16,18,.22))}
+@media(max-width:760px){.world-section{height:280vh}.world-sticky{min-height:560px}.world-topline{top:22px;font-size:8px}.world-chapter{left:6vw;top:auto;bottom:15%;transform:translateY(18px);width:min(82vw,420px)}.world-chapter.is-active{transform:translateY(0)}.world-chapter h2{font-size:clamp(54px,13vw,78px)}.world-chapter>p:not(.eyebrow){font-size:12px;max-width:290px}.world-bottom{left:6vw;right:6vw;bottom:22px;font-size:8px;gap:12px}.world-progress{max-width:none}.world-side-note{right:6vw;top:40%;font-size:7px}.world-topline{left:6vw;right:6vw}}
+@media(prefers-reduced-motion:reduce){.world-chapter{transition:none}.world-chapter.is-active{transform:translateY(-50%)}}
+
+.world-section ~ .hero{}
+.site-header{background:rgba(16,20,22,.78);border-bottom-color:rgba(255,255,255,.13)}
+.site-header .desktop-nav a,.site-header .header-cta{color:#e6e8e2}
+.site-header .header-cta{border-color:rgba(255,255,255,.35)}
+.site-header .menu-toggle span{background:#e6e8e2}
