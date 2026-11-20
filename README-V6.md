@@ -21,3 +21,8 @@ npm run build
 ```
 
 The quote form currently opens a prefilled email. Selected files are not automatically attached; the visitor must attach them in their email client. A server-side form endpoint is required for true upload and submission.
+
+
+## Correctif GitHub Pages
+
+Cette version est configurée pour le dépôt GitHub Pages `cape3d.github.io/cape3d-site/` : Astro utilise `base: '/cape3d-site'` afin de préfixer les fichiers CSS, JavaScript, favicon et images. Après remplacement des fichiers sur la branche `main`, relancer l'action GitHub Pages.

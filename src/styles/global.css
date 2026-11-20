@@ -39,7 +39,7 @@
 .world-progress span{display:block;width:100%;height:100%;background:var(--accent-light);transform:scaleX(0);transform-origin:left}
 .world-side-note{position:absolute;right:var(--gutter);top:50%;writing-mode:vertical-rl;font:8px var(--mono);letter-spacing:2px;color:rgba(230,234,229,.38)}
 .world-fallback #world-canvas{display:none}
-.world-fallback .world-sticky{background:#111719 url('/images/hero-precision-rotor.webp') center/cover no-repeat}
+.world-fallback .world-sticky{background:#111719 url('/cape3d-site/images/hero-precision-rotor.webp') center/cover no-repeat}
 .world-fallback .world-sticky:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(12,16,18,.94),rgba(12,16,18,.22))}
 @media(max-width:760px){.world-section{height:280vh}.world-sticky{min-height:560px}.world-topline{top:22px;font-size:8px}.world-chapter{left:6vw;top:auto;bottom:15%;transform:translateY(18px);width:min(82vw,420px)}.world-chapter.is-active{transform:translateY(0)}.world-chapter h2{font-size:clamp(54px,13vw,78px)}.world-chapter>p:not(.eyebrow){font-size:12px;max-width:290px}.world-bottom{left:6vw;right:6vw;bottom:22px;font-size:8px;gap:12px}.world-progress{max-width:none}.world-side-note{right:6vw;top:40%;font-size:7px}.world-topline{left:6vw;right:6vw}}
 @media(prefers-reduced-motion:reduce){.world-chapter{transition:none}.world-chapter.is-active{transform:translateY(-50%)}}
@@ -73,6 +73,6 @@
 .site-header .desktop-nav a,.site-header .header-cta{color:#394346}
 .site-header .header-cta{border-color:rgba(32,39,41,.3)}
 .site-header .menu-toggle span{background:#202729}
-.world-fallback .world-sticky{background:#f1f1ed url('/images/hero-precision-rotor.webp') center/cover no-repeat}
+.world-fallback .world-sticky{background:#f1f1ed url('/cape3d-site/images/hero-precision-rotor.webp') center/cover no-repeat}
 .world-fallback .world-sticky:after{background:linear-gradient(90deg,rgba(241,241,237,.96),rgba(241,241,237,.2))}
 @media(max-width:760px){.world-chapter h2{color:#202729}.world-chapter>p:not(.eyebrow){color:#596467}}
