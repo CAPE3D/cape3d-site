@@ -49,3 +49,30 @@
 .site-header .desktop-nav a,.site-header .header-cta{color:#e6e8e2}
 .site-header .header-cta{border-color:rgba(255,255,255,.35)}
 .site-header .menu-toggle span{background:#e6e8e2}
+
+
+/* CAPE3D V6 — white mineral world, editorial contrast and restrained metal accents */
+.world-section{background:#f1f1ed;color:#202729}
+.world-sticky{background:radial-gradient(ellipse at 68% 44%,#ffffff 0%,#f4f5f2 48%,#e7eae7 100%)}
+.world-grain{opacity:.035}
+.world-topline,.world-bottom{color:rgba(38,48,50,.58)}
+.world-topline{border-bottom-color:rgba(38,48,50,.14)}
+.world-topline span:last-child,.world-bottom>span:last-child{color:#a9683e}
+.world-chapter .eyebrow{color:#a9683e}
+.world-chapter h2{color:#202729}
+.world-chapter h2 em{color:#b77549}
+.world-chapter>p:not(.eyebrow){color:#667174}
+.world-link{border-color:rgba(32,39,41,.34);color:#202729}
+.world-link:hover{background:#b77549;border-color:#b77549;color:white}
+.world-link span{color:#a9683e}
+.world-link:hover span{color:white}
+.world-progress{background:rgba(38,48,50,.18)}
+.world-progress span{background:#b77549}
+.world-side-note{color:rgba(38,48,50,.4)}
+.site-header{background:rgba(241,241,237,.84);border-bottom-color:rgba(32,39,41,.12)}
+.site-header .desktop-nav a,.site-header .header-cta{color:#394346}
+.site-header .header-cta{border-color:rgba(32,39,41,.3)}
+.site-header .menu-toggle span{background:#202729}
+.world-fallback .world-sticky{background:#f1f1ed url('/images/hero-precision-rotor.webp') center/cover no-repeat}
+.world-fallback .world-sticky:after{background:linear-gradient(90deg,rgba(241,241,237,.96),rgba(241,241,237,.2))}
+@media(max-width:760px){.world-chapter h2{color:#202729}.world-chapter>p:not(.eyebrow){color:#596467}}

@@ -15,20 +15,20 @@ export function initWorld(){
   renderer.setPixelRatio(Math.min(devicePixelRatio||1,innerWidth<760?1.25:1.8));
   renderer.outputColorSpace=THREE.SRGBColorSpace;
   renderer.toneMapping=THREE.ACESFilmicToneMapping;
-  renderer.toneMappingExposure=1.18;
-  const scene=new THREE.Scene();scene.background=new THREE.Color(0x101416);scene.fog=new THREE.FogExp2(0x101416,.045);
+  renderer.toneMappingExposure=1.42;
+  const scene=new THREE.Scene();scene.background=new THREE.Color(0xf1f1ed);scene.fog=new THREE.FogExp2(0xf1f1ed,.028);
   const camera=new THREE.PerspectiveCamera(34,1,.1,100);camera.position.set(0,.2,9.2);
-  scene.add(new THREE.HemisphereLight(0x9eabb2,0x111416,1.8));
-  const key=new THREE.DirectionalLight(0xf1d1b1,4.5);key.position.set(4,5,7);scene.add(key);
-  const rim=new THREE.PointLight(0xc47e4b,65,18);rim.position.set(-4,1,-2);scene.add(rim);
-  const cool=new THREE.PointLight(0x8ba8ba,42,16);cool.position.set(4,-2,3);scene.add(cool);
+  scene.add(new THREE.HemisphereLight(0xffffff,0xb7bdc0,2.15));
+  const key=new THREE.DirectionalLight(0xffffff,4.1);key.position.set(4,5,7);scene.add(key);
+  const rim=new THREE.PointLight(0xc68a60,32,18);rim.position.set(-4,1,-2);scene.add(rim);
+  const cool=new THREE.PointLight(0x9fb9c3,24,16);cool.position.set(4,-2,3);scene.add(cool);
   const stage=new THREE.Group();scene.add(stage);
   stage.position.x=innerWidth<760?.72:1.45;
   const assembly=new THREE.Group();stage.add(assembly);
-  const steel=new THREE.MeshStandardMaterial({color:0x9ba3a5,metalness:.94,roughness:.2});
-  const dark=new THREE.MeshStandardMaterial({color:0x20282b,metalness:.91,roughness:.27});
-  const copper=new THREE.MeshStandardMaterial({color:0xb9794c,metalness:.88,roughness:.22});
-  const glass=new THREE.MeshPhysicalMaterial({color:0xa8c2c8,metalness:.22,roughness:.12,transmission:.62,thickness:.45,transparent:true,opacity:.78,clearcoat:1});
+  const steel=new THREE.MeshStandardMaterial({color:0xcbd0d0,metalness:.82,roughness:.24});
+  const dark=new THREE.MeshStandardMaterial({color:0x566064,metalness:.78,roughness:.3});
+  const copper=new THREE.MeshStandardMaterial({color:0xb77b51,metalness:.82,roughness:.25});
+  const glass=new THREE.MeshPhysicalMaterial({color:0xdce8e8,metalness:.08,roughness:.1,transmission:.72,thickness:.45,transparent:true,opacity:.8,clearcoat:1});
   const hub=new THREE.Group();assembly.add(hub);
   const base=new THREE.Mesh(new THREE.CylinderGeometry(1.18,1.28,.48,96),dark);base.rotation.x=Math.PI/2;hub.add(base);
   const frontRing=new THREE.Mesh(new THREE.TorusGeometry(1.19,.105,24,120),steel);frontRing.position.z=.29;hub.add(frontRing);
@@ -58,12 +58,12 @@ export function initWorld(){
   // Outer technical cage and exploded assembly components.
   const cage=new THREE.Group();assembly.add(cage);
   for(let i=0;i<24;i++){const a=i*Math.PI*2/24;const bar=new THREE.Mesh(new THREE.CylinderGeometry(.012,.012,2.9,6),copper);bar.position.set(Math.cos(a)*1.58,Math.sin(a)*1.58,0);bar.rotation.z=a+Math.PI/2;cage.add(bar);}
-  const ghost=new THREE.Mesh(new THREE.TorusGeometry(1.82,.012,8,160),new THREE.MeshBasicMaterial({color:0x9bb1b5,transparent:true,opacity:.42}));ghost.rotation.x=.9;stage.add(ghost);
-  const scan=new THREE.Mesh(new THREE.TorusGeometry(2.1,.018,8,160),new THREE.MeshBasicMaterial({color:0xd18d5d,transparent:true,opacity:.9}));scan.rotation.x=1.2;scan.rotation.y=.2;stage.add(scan);
+  const ghost=new THREE.Mesh(new THREE.TorusGeometry(1.82,.012,8,160),new THREE.MeshBasicMaterial({color:0x87989b,transparent:true,opacity:.34}));ghost.rotation.x=.9;stage.add(ghost);
+  const scan=new THREE.Mesh(new THREE.TorusGeometry(2.1,.018,8,160),new THREE.MeshBasicMaterial({color:0xb77b51,transparent:true,opacity:.72}));scan.rotation.x=1.2;scan.rotation.y=.2;stage.add(scan);
   const particlesGeo=new THREE.BufferGeometry();const particleCount=420;const positions=new Float32Array(particleCount*3);
   for(let i=0;i<particleCount;i++){const r=2.2+Math.random()*4,a=Math.random()*Math.PI*2;positions[i*3]=Math.cos(a)*r;positions[i*3+1]=(Math.random()-.5)*6;positions[i*3+2]=Math.sin(a)*r;}
   particlesGeo.setAttribute('position',new THREE.BufferAttribute(positions,3));
-  const particles=new THREE.Points(particlesGeo,new THREE.PointsMaterial({color:0xb5a18f,size:.018,transparent:true,opacity:.5}));scene.add(particles);
+  const particles=new THREE.Points(particlesGeo,new THREE.PointsMaterial({color:0x9aa5a5,size:.018,transparent:true,opacity:.42}));scene.add(particles);
   // Lattice shell is a second material language, revealed mid-story.
   const lattice=new THREE.Group();stage.add(lattice);
   const nodes=[];const rings=9,segments=24;
@@ -77,9 +77,9 @@ export function initWorld(){
     if(y<rings-1){const c=nodes[(y+1)*segments+i],d=nodes[(y+1)*segments+(i+1)%segments];linePositions.push(...a.toArray(),...d.toArray(),...b.toArray(),...c.toArray());}
   }
   const latticeGeo=new THREE.BufferGeometry();latticeGeo.setAttribute('position',new THREE.Float32BufferAttribute(linePositions,3));
-  const latticeLines=new THREE.LineSegments(latticeGeo,new THREE.LineBasicMaterial({color:0xb5c2c2,transparent:true,opacity:.0}));lattice.add(latticeLines);lattice.scale.setScalar(.001);
-  const floor=new THREE.Mesh(new THREE.PlaneGeometry(200,200),new THREE.MeshBasicMaterial({color:0x101416}));floor.rotation.x=-Math.PI/2;floor.position.y=-3.25;scene.add(floor);
-  const grid=new THREE.GridHelper(40,60,0x394144,0x242c2f);grid.position.y=-3.23;grid.material.transparent=true;grid.material.opacity=.28;scene.add(grid);
+  const latticeLines=new THREE.LineSegments(latticeGeo,new THREE.LineBasicMaterial({color:0x829193,transparent:true,opacity:.0}));lattice.add(latticeLines);lattice.scale.setScalar(.001);
+  const floor=new THREE.Mesh(new THREE.PlaneGeometry(200,200),new THREE.MeshBasicMaterial({color:0xf1f1ed}));floor.rotation.x=-Math.PI/2;floor.position.y=-3.25;scene.add(floor);
+  const grid=new THREE.GridHelper(40,60,0xc0c7c5,0xdce0dc);grid.position.y=-3.23;grid.material.transparent=true;grid.material.opacity=.2;scene.add(grid);
 
   const originals=[];assembly.traverse(o=>{if(o.isObject3D&&o!==assembly)originals.push({o,p:o.position.clone(),r:o.rotation.clone(),s:o.scale.clone()});});
   const state={progress:0,mouseX:0,mouseY:0};
@@ -116,7 +116,7 @@ export function initWorld(){
   const onPointer=e=>{state.mouseX=(e.clientX/innerWidth-.5)*2;state.mouseY=(e.clientY/innerHeight-.5)*2;};
   window.addEventListener('pointermove',onPointer,{passive:true});
   let raf=0;
-  const render=()=>{if(!reduce){stage.rotation.y+=.0008;stage.rotation.x+=(state.mouseY*.055-stage.rotation.x)*.012;stage.rotation.z+=(state.mouseX*.035-stage.rotation.z)*.012;ghost.rotation.z-=.0007;particles.rotation.y+=.00015;}renderer.render(scene,camera);if(!document.hidden)raf=requestAnimationFrame(render);};
+  const render=()=>{if(!reduce){stage.rotation.y+=.00055;stage.rotation.x+=(state.mouseY*.055-stage.rotation.x)*.012;stage.rotation.z+=(state.mouseX*.035-stage.rotation.z)*.012;ghost.rotation.z-=.0007;particles.rotation.y+=.00015;}renderer.render(scene,camera);if(!document.hidden)raf=requestAnimationFrame(render);};
   render();
   document.addEventListener('visibilitychange',()=>{if(document.hidden)cancelAnimationFrame(raf);else render();});
   window.addEventListener('pagehide',()=>{cancelAnimationFrame(raf);observer.disconnect();renderer.dispose();timeline.kill();},{once:true});
